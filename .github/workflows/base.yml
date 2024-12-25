@@ -52,11 +52,9 @@ jobs:
           summary: Build completed for ${{ github.repository }}
           description: Compare branch
 
-      - name: Log created issue
-        run: echo "Issue ${{ steps.create.outputs.issue }} was created"
-
   deployment:
     runs-on: ubuntu-latest
     environment: development
     steps:
       - name: deploy
+        run: echo "Issue ${{ steps.create.outputs.issue }} was created"
