@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Standard Pipeline
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -34,3 +35,28 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Login Tracking System
+        uses: atlassian/gajira-login@v3
+        env:
+          JIRA_BASE_URL: ${{secrets.JIRA_BASE_URL}}
+          JIRA_USER_EMAIL: ${{secrets.JIRA_USER_EMAIL}}
+          JIRA_API_TOKEN: ${{secrets.JIRA_API_TOKEN}}
+    
+      - name: Create Change Ticket on JSM
+        id: create
+        uses: atlassian/gajira-create@v3
+        with:
+          project: ITO
+          issuetype: "[System] Change"
+          summary: Build completed for ${{ github.repository }}
+          description: Compare branch
+
+      - name: Log created issue
+        run: echo "Issue ${{ steps.create.outputs.issue }} was created"
+
+  deployment:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: deploy
