@@ -1,4 +1,8 @@
 deployments:
+  services:
+    ids:
+    - b:YXJpOmNsb3VkOmdyYXBoOjpzZXJ2aWNlLzYxOTJjMDM3LWUwZTQtNGRlMS04MWIzLTdkN2VjODk4YzA0MC8wNWNiZTVmZS1iYTllLTExZWYtOTQyZC0xMjAxZjE2ZWQ0MWY=
+
   environmentMapping:
     development:
       - "dev*"
