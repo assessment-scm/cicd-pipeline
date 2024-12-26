@@ -1,4 +1,4 @@
-name: Triggered by Jira
+name: Staging Triggered by Jira
 
 on:
   workflow_dispatch:
