@@ -1,0 +1,23 @@
+name: Triggered by Jira
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'The Pull Request number to act on'
+        required: true
+        type: string
+
+jobs:
+    action-on-pr:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Perform Action on PR
+          run: echo "Action performed on PR #${{ github.event.inputs.pr_number }}"
+
+    deployment:
+        runs-on: ubuntu-latest
+        environment: production
+        steps:
+        - name: deploy
+          run: echo "Deployment for ${{ steps.create.outputs.issue }} was created on Production"

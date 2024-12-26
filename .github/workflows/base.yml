@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   pull_request:
-    branches:
+    branches:xt55t6
       - main
       - feature**
 
@@ -50,11 +50,5 @@ jobs:
           project: ITO
           issuetype: "[System] Change"
           summary: Build completed for ${{ github.repository }}
-          description: Compare branch
-
-  deployment:
-    runs-on: ubuntu-latest
-    environment: development
-    steps:
-      - name: deploy
-        run: echo "Issue ${{ steps.create.outputs.issue }} was created"
+          description: Change Request for Development
+          fields: '{"customfield_10171": "development"}'
