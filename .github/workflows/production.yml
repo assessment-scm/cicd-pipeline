@@ -1,4 +1,4 @@
-name: Production Triggered by Jira
+name: Deployment on Production
 
 on:
   workflow_dispatch:
