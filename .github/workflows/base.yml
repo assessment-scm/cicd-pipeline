@@ -50,4 +50,4 @@ jobs:
           issuetype: "[System] Change"
           summary: Build completed for ${{ github.repository }}
           description: Change Request for Development
-          fields: '{"customfield_10300": "Development","customfield_10300": "{{ github.event.inputs.pr_number }}"}'
+          fields: '{"customfield_10108": "Development","customfield_10300": "${{ github.event.inputs.pr_number }}"}'
