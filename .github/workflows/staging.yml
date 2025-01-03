@@ -1,4 +1,4 @@
-name: Triggered by Jira
+name: Deployment on Staging
 
 on:
   workflow_dispatch:
