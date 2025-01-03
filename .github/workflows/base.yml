@@ -34,3 +34,31 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  deployment_onDev:
+      runs-on: ubuntu-latest
+      environment: development
+      steps:
+      - name: deploy
+        run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Development"
+
+  deployment_onTest:
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+    - name: deploy
+      run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Testing"
+
+  deployment_onStage:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+    - name: deploy
+      run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Staging"
+
+  deployment_onProd:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - name: deploy
+      run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Production"
