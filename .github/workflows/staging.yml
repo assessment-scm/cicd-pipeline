@@ -13,7 +13,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Perform Action on PR
-          run: echo "Action performed on PR #${{ github.event.inputs.pr_number }}"
+          run: echo "Action performed on PR ${{ github.event.inputs.pr_number }}"
 
     deployment:
         runs-on: ubuntu-latest
