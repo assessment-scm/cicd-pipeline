@@ -3,7 +3,7 @@ name: Deployment on Development
 on:
   workflow_dispatch:
     inputs:
-      prName:
+      prNumber:
         description: 'The Pull Request number to act on'
         required: true
         type: string
@@ -17,7 +17,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Perform Action on PR
-          run: echo "Action performed on PR ${{ github.event.inputs.prName }}"
+          run: echo "Action performed on PR ${{ github.event.inputs.prNumber }}"
 
     deployment:
         runs-on: ubuntu-latest
