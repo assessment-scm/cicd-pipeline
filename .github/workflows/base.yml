@@ -50,4 +50,4 @@ jobs:
           issuetype: "[System] Change"
           summary: Build completed for ${{ github.repository }}
           description: Change Request for Development
-          fields: '{"customfield_10108": [{"workspaceId": "f9d34342-3a63-41bc-a32f-daf8bf0b2460","id": "f9d34342-3a63-41bc-a32f-daf8bf0b2460:586","objectId": "586"}], "customfield_10300": "${{ github.event.number }}", "customfield_10039":[{"id": "ari:cloud:graph::service/6192c037-e0e4-4de1-81b3-7d7ec898c040/05cbe5fe-ba9e-11ef-942d-1201f16ed41f"}]}'
+          fields: '{"customfield_10006": {"id": "10010"},"customfield_10005": {"id": "10005"},"customfield_10108": [{"workspaceId": "f9d34342-3a63-41bc-a32f-daf8bf0b2460","id": "f9d34342-3a63-41bc-a32f-daf8bf0b2460:586","objectId": "586"}], "customfield_10300": "${{ github.event.number }}", "customfield_10039":[{"id": "ari:cloud:graph::service/6192c037-e0e4-4de1-81b3-7d7ec898c040/05cbe5fe-ba9e-11ef-942d-1201f16ed41f"}]}'
