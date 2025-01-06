@@ -38,7 +38,7 @@ jobs:
   deployment_onDev:
       needs: build # Ensures this job runs after build
       runs-on: ubuntu-latest
-      environment: development
+      environment: Development
       steps:
       - name: deploy
         run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Development"
@@ -46,7 +46,7 @@ jobs:
   deployment_onTest:
     needs: deployment_onDev # Ensures this job runs after deployment_onDev
     runs-on: ubuntu-latest
-    environment: testing
+    environment: Testing
     steps:
     - name: deploy
       run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Testing"
@@ -54,7 +54,7 @@ jobs:
   deployment_onStage:
     needs: deployment_onTest # Ensures this job runs after deployment_onTest
     runs-on: ubuntu-latest
-    environment: staging
+    environment: Staging
     steps:
     - name: deploy
       run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Staging"
@@ -62,7 +62,7 @@ jobs:
   deployment_onProd:
     needs: deployment_onStage # Ensures this job runs after deployment_onStage
     runs-on: ubuntu-latest
-    environment: production
+    environment: Production
     steps:
     - name: deploy
       run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Production"
