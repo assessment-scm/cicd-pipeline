@@ -58,11 +58,3 @@ jobs:
     steps:
     - name: deploy
       run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Staging"
-
-  deployment_onProd:
-    needs: deployment_onStage # Ensures this job runs after deployment_onStage
-    runs-on: ubuntu-latest
-    environment: Production
-    steps:
-    - name: deploy
-      run: echo "Deployment for ${{ github.event.inputs.chRequest }} was created on Production"
