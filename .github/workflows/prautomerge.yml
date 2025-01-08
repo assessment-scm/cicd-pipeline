@@ -5,7 +5,7 @@ on:
     types: [jira-approval]
 
 jobs:
-  merge:
+  automerge:
     runs-on: ubuntu-latest
     steps:
       - name: Debug Inputs
@@ -14,7 +14,7 @@ jobs:
           echo "Repo: ${{ github.event.client_payload.repo }}"
           echo "Pull Number: ${{ github.event.client_payload.pull_number }}"
       - name: Merge PR
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const { owner, repo, pull_number } = context.payload;
