@@ -6,29 +6,8 @@ deployments:
     environments: # select the environments you'd like to use with this feature
     - Development
     - Production
-    - Staging
     - Testing
+    - Staging
   services:
     ids:
     - b:YXJpOmNsb3VkOmdyYXBoOjpzZXJ2aWNlLzYxOTJjMDM3LWUwZTQtNGRlMS04MWIzLTdkN2VjODk4YzA0MC8wNWNiZTVmZS1iYTllLTExZWYtOTQyZC0xMjAxZjE2ZWQ0MWY=
-
-  environmentMapping:
-    development:
-      - "dev*"
-      - "Entwicklung"
-      - "desenvolvimento"
-      - "дев"
-    testing:
-      - "testes"
-      - "Test"
-      - "TST-*"
-      - "тест"
-    staging:
-      - "Pre-Prod"
-      - "STG-*"
-      - "staging"
-    production:
-      - "Produktion"
-      - "produção"
-      - "продакшн"
-      - "PROD-*"

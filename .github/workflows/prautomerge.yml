@@ -1,0 +1,21 @@
+name: Auto Merge PR
+
+on:
+  repository_dispatch:
+    types: [jira-approval]
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { owner, repo, pull_number } = context.payload;
+            await github.pulls.merge({
+              owner,
+              repo,
+              pull_number,
+              merge_method: 'squash',
+            });
