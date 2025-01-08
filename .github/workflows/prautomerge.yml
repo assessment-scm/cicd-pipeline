@@ -8,6 +8,11 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug Inputs
+        run: |
+          echo "Owner: ${{ github.event.client_payload.owner }}"
+          echo "Repo: ${{ github.event.client_payload.repo }}"
+          echo "Pull Number: ${{ github.event.client_payload.pull_number }}"
       - name: Merge PR
         uses: actions/github-script@v6
         with:
@@ -16,6 +21,5 @@ jobs:
             await github.pulls.merge({
               owner,
               repo,
-              pull_number,
-              merge_method: 'squash',
+              pull_number
             });
