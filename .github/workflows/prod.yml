@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CICD Release with Atlassian
+run-name: ${{ github.actor }} release a new version
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  release:
+    types: [published]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  deployment_onProduction:
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+    - name: deploy
+      run: echo "Deployment for a new Release was created on Production"
